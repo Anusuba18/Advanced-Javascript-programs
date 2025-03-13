@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id="myLink" href="www.google.com" target="_blank">Google</a>
+    <button id="buttonId">Modify Attributes</button>
+    <script>
+        function modify(modId){
+            const ref=document.getElementById(modId);
+            const existingLink=ref.getAttribute('href');
+            console.log("Existing href link "+existingLink);
+            ref.setAttribute('href','www.yahoo.com');
+            console.log("Modified href link "+ref.getAttribute('href'));
+            console.log("Existing target style "+ref.getAttribute('target'));
+            ref.setAttribute('target','_self');
+            console.log("Existing content "+ref.getAttribute('title'));
+            ref.setAttribute('title','Yahoo');
+            console.log("Modified Title "+ref.getAttribute('title'));
+            ref.textContent="Yahoo";
+        }
+        const bu=document.getElementById('buttonId');
+        bu.addEventListener('click',function(){
+            modify('myLink');
+        })
+    </script>
+</body>
+</html>

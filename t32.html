@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Hello Anu</h1>
+    <button id="Button">Click Me</button>
+    <script>
+        const b=document.getElementById('Button');
+        b.addEventListener('click',function(){
+            const header=document.getElementById('head');
+            header.textContent="Hey how are you?";
+        })
+    </script>
+</body>
+</html>

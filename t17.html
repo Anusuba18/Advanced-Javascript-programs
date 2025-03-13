@@ -1,0 +1,18 @@
+<script>
+    function fetchData(){
+        return fetch('https://jsonplaceholder.typicode.com/users/1').
+        then((response)=>{
+            if(!response.ok)
+            throw new Error('NetWork issue');
+           return response.json();
+        });
+    }
+    function userData(user){
+        return new Promise((resolve)=>{
+            const userD=`Name:${user.name} Email:${user.email} Company:${user.company}`;
+            resolve(userD);
+        });
+    }
+    fetchData().then(user=>{return userData(user)}).then(data=>console.log(data)).catch(error=>{console.log(error)});
+    
+</script>

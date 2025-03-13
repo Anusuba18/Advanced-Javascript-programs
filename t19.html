@@ -1,0 +1,15 @@
+<script>
+    function createPromisses(userId){
+        return fetch(`https:jsonplaceholder.typicode.com/users/${userId}`).
+        then((response)=>{
+            if(!response.ok){
+                throw new Error(`Network Error for Id ${userId}`);
+            }else{
+                return response.json();
+            }
+        });
+    }
+    const uId=[1,2,3,4];
+    const pro=uId.map(id=>createPromisses(id));
+    Promise.all(pro).then((response)=>console.log("All Promises are successfully completed: "+response)).catch((error)=>console.log("Error Occured :"+error))
+</script>

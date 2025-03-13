@@ -1,0 +1,22 @@
+<script>
+    async function errorHandling(url){
+        try{
+            const response=await fetch(url);
+            if(!response.ok)
+            throw new Error(`Error occured ${response.status} `);
+            const data=await response.json();
+            console.log(`Fetched Data ${data}`);
+            return data;
+        }catch(error){
+            console.log(error);
+            return null;
+        }
+    }
+    errorHandling('https://jsonplaceholder.typicode.com/users/1').
+    then((result)=>{
+        if(result)
+        console.log("Proccessed data "+result);
+        else
+        console.log("Np processed data");
+    });
+</script>

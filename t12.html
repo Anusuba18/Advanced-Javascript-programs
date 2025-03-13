@@ -1,0 +1,18 @@
+<script>
+    function createCounter(){
+        let count=0;
+        return {
+            increment:function inc(){
+                count++;
+            },
+            getCount:function get(){
+                return count;
+            }
+        };
+    }
+    const c=createCounter();
+    c.increment();
+    c.increment();
+    console.log(c.getCount());
+    
+</script>

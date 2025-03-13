@@ -1,0 +1,18 @@
+<script>
+    async function fetchMultipleApi(urls){
+        try{
+            const promises=urls.map((url)=>fetch(url).then((response)=>response.json()));
+            const result= await Promise.all(promises);
+            console.log("Fetched result "+result);
+            return result;
+        }catch(error){
+            console.error("Error Occured");
+        }
+    }
+    const urls=[
+        'https://jsonplaceholder.typicode.com/users/1',
+        'https://jsonplaceholder.typicode.com/users/2',
+        'https://jsonplaceholder.typicode.com/users/3'
+    ];
+    fetchMultipleApi(urls).then((result)=>console.log("Fetched data "+result)).catch((error)=>console.log(error));
+</script>

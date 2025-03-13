@@ -1,0 +1,15 @@
+<script> 
+    function towerOfHanoi(n, from,  to,  aux)
+    {
+            if (n == 0)
+            {
+                return;
+            }
+            towerOfHanoi(n - 1, from, aux, to);
+            console.log("Move disk " + n + " from rod " + from +
+            " to rod " + to);
+            towerOfHanoi(n - 1, aux, to, from);
+        }
+        var N = 3;
+        towerOfHanoi(N, 'A', 'C', 'B');
+    </script>

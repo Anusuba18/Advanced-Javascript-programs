@@ -1,0 +1,10 @@
+<script>
+    function outerFun(x){
+        return function innerFun(y){
+            return x+y;
+        }
+    }
+    const outer=outerFun(5);
+    const res=outer(10);
+    console.log(res);
+</script>

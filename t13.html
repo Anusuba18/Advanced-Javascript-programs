@@ -1,0 +1,23 @@
+<script>
+    function counterClosure(){
+        let count=0;
+        return {
+            increment:function(){
+                count++;
+            },
+            decrement:function(){
+                count--;
+            },
+            getCount:function(){
+                return count;
+            }
+        };
+    }
+    const counter1=counterClosure();
+    const counter2=counterClosure();
+    counter1.increment();
+    counter1.increment();
+    counter2.increment();
+    console.log("Counter 1:"+counter1.getCount());
+    console.log("Counter 2:"+counter2.getCount());
+</script>

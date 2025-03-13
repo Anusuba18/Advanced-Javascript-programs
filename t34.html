@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="togButton">Toggle Content</button>
+    <div id="togElement">I am Visible if you want me to unvisible click the above button (:</div>
+    <script>
+        function toggle(togId){
+            const ref=document.getElementById(togId);
+            if(ref.style.display==='none'){
+                ref.style.display='block';
+            }else{
+                ref.style.display='none';
+            }
+        }
+        const bu=document.getElementById('togButton');
+        bu.addEventListener('click',function(){
+            toggle('togElement');
+        });
+    </script>
+</body>
+</html>

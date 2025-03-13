@@ -1,0 +1,17 @@
+<script>
+    function clone(object){
+        return JSON.parse(JSON.stringify(object));
+    }
+    const object={
+        name:'Anu',
+        age:20,
+        address:{
+            district:'Kallakurichi',
+            village:'Siruvangur'
+        },
+        hobbies:['Drawing','Sleeping']
+    };
+    const clonedObject=clone(object);
+    console.log(clonedObject);
+    console.log(clonedObject.adress.village);
+</script>

@@ -1,0 +1,24 @@
+<script>
+    function usingPromise(url){
+        return fetch(url).then((response)=>{
+            if(!response.ok)
+            throw new Error("NetWork error");
+            else{
+                return response.json();
+            }
+        }).then((response)=>console.log(response)).catch((error)=>console.log(error));
+    }
+    //usingPromise('https://jsonplaceholder.typicode.com/users/1');
+    async function usingAsyncAwait(url){
+        try{
+            const response=await fetch(url);
+            if(!response.ok)
+            throw new Error('Network Error');
+           const data=await response.json();
+           console.log(data)
+        }catch(error){
+            console.error("Error Occured:"+error);
+        }
+    }
+    usingAsyncAwait('https://jsonplaceholder.typicode.com/users/1')
+</script>

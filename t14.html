@@ -1,0 +1,22 @@
+<script>
+    function makeVarPrivate(){
+        let count=0;
+        return{
+            increment:()=>{
+                count++;
+            },
+            decrement:()=>{
+                count--;
+            },
+            getCount:()=>{
+                return count;
+            }
+        }
+    }
+    const fun=makeVarPrivate();
+    fun.increment();
+    console.log(fun.getCount());
+    fun.decrement();
+    console.log(fun.getCount());
+    //console.log(count);
+</script>

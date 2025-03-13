@@ -1,0 +1,10 @@
+<script>
+    function merge(obj1,obj2){
+        const mObj={...obj1,...obj2};
+        return mObj;
+    }
+    const obj1={name:'Anu',age:20};
+    const obj2={city:'Kallakurichi'};
+    const mObj=merge(obj1,obj2);
+    console.log(mObj);
+</script>
